@@ -1,0 +1,10 @@
+---
+- name: Install Packages | apt | vsftpd
+  apt:
+    state: latest
+    pkg: "{{ item }}"
+  with_items:
+    - vsftpd
+  tags:
+    - vsftpd
+    - install

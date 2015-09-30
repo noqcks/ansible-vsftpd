@@ -1,0 +1,10 @@
+---
+vsftpd_user: root
+vsftpd_group: staff
+
+vsftpd_allowed_users: []
+
+vsftpd_log_root: "{{ log_root | default('/var/log') }}/vsftpd"
+vsftpd_local_enable: yes
+vsftpd_write_enabled: no
+vsftpd_port: 022

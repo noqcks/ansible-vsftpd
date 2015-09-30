@@ -1,0 +1,13 @@
+---
+- name: Upload Config | vsftpd
+  template:
+    src: etc/vsftpd.conf
+    dest: /etc/vsftpd.conf
+    owner: "{{ vsftpd_user }}"
+    group: "{{ vsftpd_group }}"
+    mode: 0664
+  notify: Reload Service | vsftpd
+  tags:
+    - configuration
+    - template-configuration
+    - vsftpd

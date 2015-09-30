@@ -1,0 +1,21 @@
+---
+- name: "File exists | vsftpd userlist"
+  file:
+    state: touch
+    path: /etc/vsftpd.userlist
+    owner: "{{ vsftpd_user }}"
+    group: "{{ vsftpd_group }}"
+    mode: 0664
+  tags:
+    - vsftpd
+
+- name: "Configure | Allowed users"
+  lineinfile:
+    state: present
+    dest: /etc/vsftpd.userlist
+    line: "{{ item }}"
+    insertafter: EOF
+  with_items: vsftpd_allowed_users
+  tags:
+    - vsftpd
+    - vsftpd-users

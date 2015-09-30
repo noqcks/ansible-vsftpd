@@ -1,0 +1,7 @@
+---
+- name: Reload Service | vsftpd
+  service:
+    state: reloaded
+    name: vsftpd
+  tags:
+    - disruptive

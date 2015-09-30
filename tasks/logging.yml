@@ -1,0 +1,12 @@
+---
+- name: "Directory Exists | {{ vsftpd_log_root }}"
+  file:
+    state: directory
+    path: "{{ vsftpd_log_root }}"
+    owner: "{{ vsftpd_user }}"
+    group: "{{ vsftpd_group }}"
+    mode: 0775
+  tags:
+    - directory-structure
+    - logging
+    - vsftpd

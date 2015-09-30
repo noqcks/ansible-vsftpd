@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  remote_user: root
+
+  vars:
+    vsftpd_allowed_users:
+      - ubuntu
+  roles:
+    - ansible-vsftpd
